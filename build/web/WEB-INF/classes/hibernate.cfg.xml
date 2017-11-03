@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+  <session-factory>
+      <!-- Asigna la propiedad de Dialecto entre Java y MySQL -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!-- Conecta Java y MySQL -->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <!-- Estable el protocolo de comunicacion (jdbc:mysql), el puerto y esquema a utlizar y el parameteo de tiempo -->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/generationHibernate?zeroDateTimeBehavior=convertToNull</property>
+        <!-- Nombre de usuario para ACCESO a la base de datos -->
+        <property name="hibernate.connection.username">root</property>
+        <!-- contraseña para ACCESO a la base de datos -->
+        <property name="hibernate.connection.password">root</property>
+        
+        <!-- Mapea las clases que participan en el proceso -->
+        <mapping class="pojo.Persona"/>
+        <mapping class="pojo.TipoPersona"/>
+        
+    </session-factory>
+</hibernate-configuration>
